@@ -1,0 +1,333 @@
+*, *::after, *::before{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+    "banner"
+    "section-a"
+    "section-b"
+    "section-c"
+    "section-d"
+    "footer";
+    grid-template-rows: 450px 200px 500px 200px 300px 100px;
+}
+
+/* Start of .banner */
+
+.banner{
+    grid-area: banner;
+    display: grid;
+    align-items: center;
+    
+}
+
+.banner-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    text-align: center;
+    
+} 
+
+.bg-image{
+    position: absolute;
+    background: black url("./images/programming-banner.jpg");
+    width: 100%;
+    height: 450px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+
+.banner .banner-content h1{
+    font-size: 30px;
+    color: white;
+}
+
+.banner .banner-content p{
+    color: white;
+    font-size: 20px;
+}
+
+.banner .banner-content a{
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+    background: #333;
+}
+
+/* Start of .section-a*/
+.section-a{
+    grid-area: section-a;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+/* Start of section-b */
+.section-b img{
+    width: 100%;
+}
+
+.section-b{
+    grid-area: section-b;
+    width: 80%;
+    margin-left:auto;
+    margin-right: auto;
+
+    display: grid;
+    align-items: center;
+}
+
+.section-b ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+}
+
+.section-b ul li{
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/* Section-c */
+.section-c{
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 20px;
+    text-align: center;
+} 
+
+/* Section-d */
+.section-d{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.section-d div:nth-of-type(1){
+    background: rgb(51, 51, 235);
+    text-align: center;
+    
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.section-d div:nth-of-type(2){
+    background: rgb(3, 129, 117);
+    text-align: center;
+
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.section-d > div > h3{
+    color: white;
+    font-size: 30px;
+}
+
+.section-d > div > p{
+    color:white;
+    font-size: 20px;
+    width: 80%;
+}
+
+/* Footer */
+
+footer{
+    grid-area: footer;
+    background: black;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 900px){
+
+    body{
+        grid-template-rows: 450px 200px 500px 200px 400px 100px;
+    }
+
+    .section-d{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media only screen and (max-width: 700px){
+
+    body{
+        grid-template-rows: 450px 200px 1250px 200px 400px 100px;
+    }
+
+    .banner .banner-content h1 {
+        font-size:25px;
+    }
+
+    .banner .banner-content p{
+        font-size: 15px;
+        width: 80%;
+    }
+
+    .banner .banner-content a{
+        font-size: 15px;
+    }
+
+    .section-a h2{
+        font-size: 20px;
+    }
+
+    .section-a p{
+        font-size: 15px;
+        width: 80%;
+    }
+
+    .section-b ul{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .section-b ul li{
+        width: 60%;
+    }
+
+    .section-c h2{
+        font-size: 20px;
+    }
+
+    .section-c p{
+        font-size: 15px;
+        width: 80%;
+    }
+
+    .section-d > div > h3 {
+        font-size: 25px;
+    }
+
+    .section-d > div > p {
+        font-size: 15px;
+    }
+
+    footer{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 450px){
+
+    body{
+        grid-template-rows: 450px 200px 1100px 200px 400px 100px;
+    }
+
+    .banner .banner-content h1 {
+        font-size: 20px;
+    }
+
+    .banner .banner-content p {
+        font-size: 13px;
+    }
+
+    .section-a h2 {
+        font-size: 17px;
+    }
+
+    .section-a p{
+        font-size: 13px;
+    }
+
+    .section-c h2{
+        font-size: 17px;
+    }
+
+    .section-c p{
+        font-size: 13px;
+    }
+
+    .section-d > div > h3 {
+        font-size: 20px;
+    }
+
+    .section-d > div > p{
+        font-size: 14px;
+    }
+
+    footer>div>p{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+
+    body{
+        grid-template-rows: 450px 200px 600px 200px 400px 100px;
+    }
+
+    .banner .banner-content p{
+        display: none;
+    }
+
+    .banner .banner-content a{
+        font-size: 13px;
+    }
+
+    .section-b ul li p{
+        display: none;
+    }   
+}
+
+@media only screen and (max-width: 350px){
+
+    body{
+        grid-template-rows: 450px 200px 800px 200px 400px 100px;
+    }
+
+    .banner .banner-content h1{
+        font-size: 15px;
+    }
+
+    .section-a p{
+        font-size: 10px;
+    }
+
+    .section-a h2{
+        font-size: 15px;
+    }
+
+    .section-b ul li{
+        width: 100%;
+    }
+
+    .section-c p{
+        font-size: 10px;
+    }
+
+    .section-c h2{
+        font-size: 15px;
+    }
+}
